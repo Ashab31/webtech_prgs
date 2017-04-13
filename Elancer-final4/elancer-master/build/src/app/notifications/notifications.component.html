@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Notifications</h2>
+</div><br><br>
+
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table">
+            
+                <tr>
+                    
+                    <th>Task Name</th>
+                    <th>Description</th>
+                    <th>Domain</th>
+                    <th>URL</th>
+                    <th>Git ID</th>
+                    <th>Status</th>
+                </tr>
+                <ng-container *ngFor='let task of tasks'>
+               <tr>
+                   
+                    <td> {{task.Task_Name}}</td>
+                    <td> {{task.Short_Description}} </td>
+                    <td> {{task.Indus_focus}} </td>
+                    <td> {{task.Git_Url}} </td>
+                    <td> {{task.Git_Id}} </td>
+                    <td> {{task.Task_Status}} </td>
+                </tr>
+            </ng-container>
+        </table>
+    </div>
+</div>

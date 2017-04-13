@@ -1,0 +1,57 @@
+.profile {
+  width: 450px;
+  height: 200px;
+  border: 2px solid blue;
+  border-radius: 10%; }
+
+.parent, .small-panel, .big-panel {
+  border: 3px solid dodgerblue;
+  background: lightgreen;
+  margin: 10px; }
+
+.small-panel {
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 5px; }
+
+.big-panel {
+  border-radius: 20px;
+  font-size: 38px;
+  padding: 30px; }
+
+body {
+  background-color: grey; }
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+nav li {
+  display: inline-block; }
+
+nav a {
+  color: black;
+  font-size: 20px;
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none; }
+
+.navbar {
+  background-color: peachpuff;
+  width: auto;
+  height: 40px; }
+
+.text {
+  width: 1000px;
+  height: 150px;
+  float: right;
+  margin-right: 15px;
+  width: 1000px;
+  height: 150px;
+  float: right;
+  margin-top: 15px;
+  border: indigo 2px solid;
+  font-size: 25px;
+  padding: 5px;
+  float: right; }

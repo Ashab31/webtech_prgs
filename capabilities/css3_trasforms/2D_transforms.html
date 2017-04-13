@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div#normal {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+        
+        div#myDiv {
+            margin-left: 03em;
+            margin-top: 3em;
+            -ms-transform: skewX(20deg);
+            /* IE 9 */
+            -webkit-transform: skewX(20deg);
+            /* Safari */
+            transform: skewX(20deg);
+            /* Standard syntax */
+        }
+        
+        div#Div {
+            margin-left: 5em;
+            -ms-transform: skew(20deg, 10deg);
+            /* IE 9 */
+            -webkit-transform: skew(20deg, 10deg);
+            /* Safari */
+            transform: skew(20deg, 10deg);
+            /* Standard syntax */
+        }
+        
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: powderblue;
+            border: 1px solid black;
+            -ms-transform: translate(50px, 100px);
+            /* IE 9 */
+            -webkit-transform: translate(50px, 100px);
+            /* Safari */
+            transform: translate(30px, 20px);
+            /* Standard syntax */
+        }
+        
+        #id1 {
+            width: 300px;
+            height: 100px;
+            margin-left: 03em;
+            background-color: lawngreen;
+            transform: rotate(-10deg);
+        }
+        
+        #id2 {
+            margin: 100px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+            -ms-transform: scale(2, 2);
+            /*
+    IE 9 */
+            -webkit-transform: scale(2, 2);
+            /* Safari */
+            transform: scale(2, 2);
+            /* Standard syntax */
+        }
+    </style>
+</head>
+
+<body>
+    <h3>1.Translate</h3>
+    <div>
+        The translate() method moves an element from its current position. This div element is moved 50 pixels to the right, and 100 pixels down from its current position.
+    </div>
+    <h3><br>2.Rotate</h3>
+    <div id="id1">
+        Rotate the element to specified degree from its original position here it is rotated anticlockwise
+    </div>
+    <h3><br>3.Scale</h3>
+    <div id="id2">
+        This div element is two times of its original width, and two times of its original height.
+    </div>
+
+    <h3><br> 3.SkewX</h3>
+    <p>The skewX() method skews an element along the X-axis by the given angle.</p>
+
+    <div id "normal">
+        This a normal div element.
+    </div>
+
+    <div id="myDiv">
+        This div element is skewed 20 degrees along the X-axis.
+    </div>
+    <br>
+    <div id="Div">
+        This div element is skewed 20 degrees along the X-axis, and 10 degrees along the Y-axis.
+    </div>
+
+
+</body>
+
+</html>

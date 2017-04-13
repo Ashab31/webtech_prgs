@@ -1,0 +1,143 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+            <a class="navbar-brand"><span class="fa fa-american-sign-language-interpreting fa-2x"></span> COE HUB</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a routerLink="/app-solutions" RouterLinkActive="active"><span class="fa fa-superpowers fa-2x"></span> Solutions</a></li>
+                <li><a routerLink="/app-offerings" RouterLinkActive="active"><span class="fa fa-briefcase fa-2x"></span> Offerings</a></li>
+                <li><a routerLink="/app-components" RouterLinkActive="active"><span class="fa fa-thumb-tack fa-2x"></span> Components</a></li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle fa-2x"></span>{{name}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/app-profile" RouterLinkActive="active">Profile</a></li>
+                        <li><a routerLink="/app-notifications" RouterLinkActive="active">Notification</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a (click)="logOut()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="card-cut col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xs-offset-1">
+            <div class="caption">
+                <p style="margin-top: 10%;"> New Solution </p>
+                <a role="button" data-toggle="modal" data-target=".bs-example-modal-lg"> <span class="fa fa-plus-circle fa-3x"></span> </a>
+
+            </div>
+        </div>
+        <div class="card-cut col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xs-offset-1" *ngFor="let sol of Solution">
+            <div class="caption">
+                <h1><u>{{sol.Solution_Name}}</u></h1>
+                <p>{{sol.Short_Description}}</p>
+                <p><a class="btn btn-primary" role="button" routerLink="/app-tasks" RouterLinkActive="active" (click)="getId(sol._id)">Details</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--SOLUTION REQUEST MODAL-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create a Solution</h4>
+            </div>
+            <div class="modal-body">
+
+                <!--solutions form-->
+                <div class="container">
+                    <form #requestForm="ngForm" autocomplete="on">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Solution_Name">Solution Name</label>
+                                    <input type="text" [(ngModel)]="Solution_Name" name="Solution_Name" class="form-control" id="Solution_Name" required placeholder="Name for Solution">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Solution_Type">Solution Type</label>
+                                    <select [(ngModel)]="Solution_Type" name="Solution_Type" class="form-control" id="Solution_Type" required>
+                                        <option value="Development"> Development </option>
+                                        <option value="Testing"> Testing </option>
+                                        <option value="Documentation"> Documentation </option>
+                                        <option value="System Setup"> System Setup </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Short_Description">Short Description:</label>
+                                    <input type="text" [(ngModel)]="Short_Description" name="Short_Description" class="form-control" id="Short_Description" placeholder="Short Description for Solution">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Solution_Description">Solution Description:</label>
+                                    <textarea [(ngModel)]="Solution_Description" name="Solution_Description" class="form-control" id="Solution_Description" placeholder="Complete Description for Solution"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Estimated_Days">Estimated days:</label>
+                                    <input type="number" [(ngModel)]="Estimted_Days" name="Estimated_Days" class="form-control" id="Estimated_Days" placeholder="How many days will it take?">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="row ">
+                                <div class="col-sm-8 ">
+                                    <label for="Industry_Focus">Industry Focus:</label>
+                                    <select [(ngModel)]="Industry_Focus" name="Industry_Focus" class="form-control" id="Industry_Focus" required>
+                                        <option value="TTH"> TTH </option>
+                                        <option value="TMS"> TMS </option>
+                                        <option value="BFSI"> BFSI </option>
+                                        <option value="RCM"> RCM </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class="row ">
+                                <div class="col-sm-8 ">
+                                    <label for="Digital_Group">Digital Group:</label>
+                                    <select [(ngModel)]="Digital_Group" name="Digital_Group" class="form-control" id="Digital_Group" required>
+                                        <option value="E-Commerce"> E-Commerce </option>
+                                        <option value="Marketing"> Marketing </option>
+                                        <option value="Mobile"> Mobile </option>
+                                        <option value="Cloud"> Cloud </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" (click)="CreateSolution(requestForm.value)" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

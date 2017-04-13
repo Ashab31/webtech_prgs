@@ -1,0 +1,111 @@
+<!--header-->
+<div class="container">
+    <h2> Completed Tasks </h2>
+</div><br><br>
+
+
+
+<!--table-->
+
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class=" table ">
+            <tr class="default">
+                <!--<td><strong> <input type="checkbox "> </strong></td>-->
+                <td><strong>Task_ID</strong></td>
+                <td> <strong> Task Name </strong> </td>
+                <td> <strong> Description</strong> </td>
+                <td> <strong> Domain </strong> </td>
+                <td> <strong> Vacancy </strong> </td>
+            </tr>
+
+
+            <ng-container *ngFor='let task of tasks'>
+                <tr *ngIf='task.Task_Status != "Open"'>
+                    <td>{{task._id}}</td>
+                    <td> {{task.Task_Name}}</td>
+                    <td> {{task.Short_Description}} </td>
+                    <td> {{task.Indus_focus}} </td>
+                    <td> {{task.No_of_Contributers}} </td>
+                </tr>
+            </ng-container>
+        </table>
+    </div>
+</div>
+
+
+
+<!--<div class="container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Description</th>
+                    <th>Domain</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Domain</td>
+                    <td>Status</td>
+                </tr>
+
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Domain</td>
+                    <td>Status</td>
+                </tr>
+
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Domain</td>
+                    <td>Status</td>
+                </tr>
+
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Domain</td>
+                    <td>Status</td>
+                </tr>
+
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Domain</td>
+                    <td>Status</td>
+                </tr>
+
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Domain</td>
+                    <td>Status</td>
+                </tr>
+
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Domain</td>
+                    <td>Status</td>
+                </tr>
+
+                <tr>
+                    <td>Task Name</td>
+                    <td>Description</td>
+                    <td>Domain</td>
+                    <td>Status</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->
+
+
+

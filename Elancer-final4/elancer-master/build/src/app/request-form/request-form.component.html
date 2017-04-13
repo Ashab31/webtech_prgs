@@ -1,0 +1,78 @@
+<div class="container">
+
+    <form (submit)="onRequestSubmit()" #requestForm="ngForm" autocomplete="on">
+        <!--<h2>Component request form</h2>-->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-8">
+                    <label for="taskname">Task Name</label>
+                    <input type="text" [(ngModel)]="task_name" name="task_name" class="form-control" id="task_name">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-8">
+                    <label for="comptype">Component Type:</label>
+                    <input type="text" [(ngModel)]="component_type" name="component_type" class="form-control" id="component_type">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-8">
+                    <label for="compcat">Component Category</label>
+                    <input type="text" [(ngModel)]="component_category" name="component_category" class="form-control" id="component_category">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <div class="row ">
+                <div class="col-sm-8 ">
+                    <label for="description ">Short Description</label>
+                    <textarea rows="5 " class="form-control " [(ngModel)]="short_description" name="short_description" id="short_description"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <div class="row ">
+                <div class="col-sm-8 ">
+                    <label for="solution_desp ">Solution Description</label>
+                    <textarea class="form-control " [(ngModel)]="solution_description" name="solution_description" rows="5 " id="solution_description"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <div class="row ">
+                <div class="col-sm-4 ">
+                    <label for="focus ">Industry Focus</label>
+                    <input type="text " [(ngModel)]="industry_focus" name="industry_focus" class="form-control " id="industry_focus">
+                </div>
+                <div class="col-sm-4 ">
+                    <label for="dig_group ">Digital Group</label>
+                    <input type="text " [(ngModel)]="digital_group" name="digital_group" class="form-control " id="digital_group">
+                </div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <div class="row ">
+                <div class="col-sm-4 ">
+                    <label for="supporting_group ">Supporting group</label>
+                    <input type="text " [(ngModel)]="supporting_group " name="supporting_group " class="form-control " id="supporting_group ">
+                </div>
+                <div class="col-sm-4">
+                    <label for="compcat">Number of contributors</label>
+                    <input type="text" [(ngModel)]="num_contributors" name="num_contributors" class=" form-control " id="num_contributers ">
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="row ">
+            <button type="submit " class="btn btn-lg btn-success" (click)="saveForm(requestForm.value) ">Submit</button>
+        </div>-->
+        <div class="row ">
+        <input type="submit" class="btn btn-success btn-lg" (click)="saveForm(requestForm.value)" value="Submit">
+        </div>
+    </form>
+</div>

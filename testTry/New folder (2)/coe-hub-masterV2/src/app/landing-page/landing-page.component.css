@@ -1,0 +1,79 @@
+.brdr1 {
+    margin-top: 20px;
+    padding: 0 !important;
+    box-shadow: 5px 5px 5px #888888;
+    font-family: 'Revalia', cursive;
+    height: 382px;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    background-image: url('./solutions.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+}
+
+.brdr1:hover {
+    transform: scale(1.2);
+}
+
+.brdr2 {
+    margin-top: 20px;
+    padding: 0 !important;
+    box-shadow: 5px 5px 5px #888888;
+    font-family: 'Revalia', cursive;
+    height: 382px;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    background-image: url('./offerings.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.brdr2:hover {
+    transform: scale(1.2);
+}
+
+.brdr3 {
+    margin-top: 20px;
+    padding: 0 !important;
+    box-shadow: 5px 5px 5px #888888;
+    font-family: 'Revalia', cursive;
+    height: 382px;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    background-image: url('./tasks.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.brdr3:hover {
+    transform: scale(1.2);
+}
+
+@media only screen and (min-width: 769px) {
+    .col-lg-offset-1 {
+        margin-left: 100px !important;
+    }
+}
+
+.content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    height: 382px;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    padding-top: 200px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.container {
+    padding-left: 30px !important;
+    padding-top: 40px;
+    width: 100% !important;
+}

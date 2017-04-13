@@ -1,0 +1,79 @@
+.square {
+    width: 150px;
+    height: 150px;
+    background-color: deepskyblue;
+}
+
+#color .square {
+    -webkit-transition-property: background-color;
+    -moz-transition-property: background-color;
+    transition-property: background-color, transform;
+    transition-duration: 3s, 2s;
+}
+
+#circle .square {
+    /* transition-property: border-radius;
+    transition-duration: 3s; */
+    transition: border-radius 3s 1s, background-color 3s 1s, transform 3s 1s;
+}
+
+#color .square:hover {
+    background-color: green;
+    transform: scale(0.5);
+}
+
+#circle .square:hover {
+    border-radius: 50%;
+    background-color: palevioletred;
+    transform: translateX(1200px);
+}
+
+@keyframes box {
+    0% {
+        background-color: deeppink;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        background-color: deeppink;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.box {
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: deeppink;
+    position: relative;
+    animation-name: box;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+/*
+#skew .square {
+    transform: skew(10deg);
+}
+*/
+
+#skew .square:hover {
+    transform: skew(50deg) 0s 5s;
+}

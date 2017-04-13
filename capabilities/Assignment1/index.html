@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="func.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+
+            <form>
+                <div class="form-group">
+                    <label for="category">CATEGORIES:</label>
+                    <select class="form-control" id="category" size="1">
+                      <option value="" selected="selected"> categories...</option>
+                      
+                    </select>
+                    <br>
+                    <label for="drinks">DRINKS:</label>
+                    <select class="form-control" id="drinks" size="1">
+                       <option value="" selected="selected">Select Drinks...</option>
+                     </select>
+                    <br>
+                    <label for="order">ORDERS:</label>
+                    <select class="form-control" id="order" size="1">
+                      <option value="" selected="selected">Select Snacks...</option>  
+                     </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var stateObject = {
+            "Beverages": {
+                "Tea": ["Green Tea", "Lemon Tea"],
+                "Coffee": ["Latte", "Cappuccino"]
+            },
+            "Snacks": {
+                "Sandwich": ["Corn", "Bread Omlet"],
+                "Noodles": ["Soupy", "Veg"]
+            }
+        }
+        window.onload = function() {
+            var category = document.getElementById("category"),
+                drinks = document.getElementById("drinks"),
+                order = document.getElementById("order");
+            for (var index in stateObject) {
+                category.options[category.options.length] = new Option(index, index);
+
+            }
+            category.onchange = function() {
+                drinks.length = 1;
+                order.length = 1;
+                if (this.selectedIndex < 1)
+                    return;
+                for (var index2 in stateObject[this.value]) {
+                    drinks.options[drinks.options.length] = new Option(index2, index2);
+                }
+                // category.onchange();
+                drinks.onchange = function() {
+                    order.length = 1;
+                    if (this.selectedIndex < 1) return;
+                    var junk = stateObject[category.value][this.value];
+                    for (var i = 0; i < junk.length; i++) {
+                        order.options[order.options.length] = new Option(junk[i], junk[i]);
+                    }
+                }
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

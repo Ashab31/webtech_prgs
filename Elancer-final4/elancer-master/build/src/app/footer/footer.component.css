@@ -1,0 +1,23 @@
+ /*footer{
+    height: 4.5em;
+    width: 100%;
+    text-align: right;
+    background-color: #485F77;
+    color: white;
+    bottom: 0;
+    position: fixed;
+   font-size: 10px;
+ }*/
+
+  
+footer {
+  /*margin-top:10%;*/
+  position:fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color:black;
+  color:white;
+  text-align:right;
+
+}

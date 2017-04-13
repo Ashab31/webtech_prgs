@@ -1,0 +1,67 @@
+.row {
+    margin-top: 2em;
+}
+
+h2 {
+    margin-bottom: 1em;
+}
+
+.col-sm-4 {
+    margin-bottom: 1em;
+}
+
+.hdr {
+    font-size: 1.5em;
+    margin-top: 1em;
+    /*text-align: center;*/
+}
+
+.top {
+    margin-top: 1em;
+    font-family: Roboto Slab;
+    font-size: 23px;
+}
+
+.img {
+    margin-left: 20px;
+}
+
+.fa-6x {
+    height: 100px;
+    width: 100px;
+}
+
+.content {
+    font-family: Roboto Slab;
+    font-size: 15px;
+    /*text-align: center;*/
+}
+
+.orgdata {
+    margin-top: 10px;
+}
+
+.name {
+    font-size: 23px;
+    margin-top: 1.3em;
+    font-family: Roboto Slab;
+}
+
+.nav-tabs li a {
+    font-size: 20px;
+    font-family: Roboto Slab;
+    font-weight: 500;
+}
+
+.content {
+    font-size: 18px;
+    font-family: Roboto Slab;
+}
+
+.projdata {
+    margin-top: -2.5em;
+}
+
+.space {
+    font-size: 1em;
+}

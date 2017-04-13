@@ -1,0 +1,30 @@
+.content {
+    /*border: 0.1px solid black;*/
+    box-shadow: 15px 15px 10px #F3EAEA;
+    margin-top: 2em;
+    /*text-align: center;*/
+}
+
+.hdr {
+    padding-top: 0.5em;
+    font-size: 1.5em;
+    height: 2.5em;
+    font-family: Roboto Slab;
+}
+
+.text {
+    font-size: 18px;
+    font-family: Roboto Slab;
+}
+h2{
+    font-family:Roboto Slab !important;
+}
+
+
+.table{
+    
+    background-color: grey;
+    opacity: 0.2;
+    color: white;
+}
+}

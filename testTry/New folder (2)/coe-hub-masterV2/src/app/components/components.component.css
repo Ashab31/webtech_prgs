@@ -1,0 +1,45 @@
+.card-cut {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 382px;
+    margin-top: 10%;
+    color: white;
+    font-size: 2em !important;
+}
+
+.card-cut:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 80px solid white;
+    border-left: 80px solid dimgrey;
+    width: 0;
+}
+
+.caption {
+    margin-top: 50%;
+    font-family: 'Nova Oval', cursive;
+    padding-left: 20px;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+.caption a {
+    color: white !important;
+    position: absolute;
+    left: 35%;
+}
+
+.page-header {
+    margin-top: 5%;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.page-header1 {
+    margin-top: 15% !important;
+    font-size: 32px;
+    font-weight: bold;
+}

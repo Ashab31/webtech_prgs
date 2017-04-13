@@ -1,0 +1,128 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+            <a class="navbar-brand"><span class="fa fa-american-sign-language-interpreting fa-2x"></span> COE HUB</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/app-solutions" RouterLinkActive="active"><span class="fa fa-superpowers fa-2x"></span> Solutions</a></li>
+                <li><a routerLink="/app-offerings" RouterLinkActive="active"><span class="fa fa-briefcase fa-2x"></span> Offerings</a></li>
+                <li><a routerLink="/app-components" RouterLinkActive="active"><span class="fa fa-thumb-tack fa-2x"></span> Components</a></li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle fa-2x"></span>{{name}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/app-profile" RouterLinkActive="active">Profile</a></li>
+                        <li><a routerLink="/app-notifications" RouterLinkActive="active">Notification</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a (click)="logOut()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="card-cut1 col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xs-offset-1">
+            <div class="caption">
+                <p style="margin-top: 10%;"> Details </p>
+                <a role="button" routerLink="/app-details" RouterLinkActive="active"> <span class="fa fa-info-circle fa-3x"></span> </a>
+
+            </div>
+        </div>
+        <div class="card-cut1 col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xs-offset-1">
+            <div class="caption">
+                <p style="margin-top: 10%;"> New Task </p>
+                <a role="button" data-target="#newTask" data-toggle="modal"> <span class="fa fa-plus-circle fa-3x"></span> </a>
+
+            </div>
+        </div>
+        <div class="card-cut1 col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xs-offset-1" *ngFor="let sol of Tasks">
+            <div class="caption">
+                <h1><u>{{sol.Task_Name}}</u></h1>
+                <p>{{sol.Description}}</p>
+                <p><a class="btn btn-primary" role="button" routerLink="/app-task-details" RouterLinkActive="active" (click)="getId(sol._id)">Details</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="newTask">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <form #requestForm="ngForm" autocomplete="on">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Task_Name">Task Name</label>
+                                    <input type="text" [(ngModel)]="Task_Name" name="Task_Name" class="form-control" id="Task_Name" required placeholder="Name for Task">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Task_Type">Task Type</label>
+                                    <select [(ngModel)]="Task_Type" name="Task_Type" class="form-control" id="Task_Type" required>
+                                        <option value="Development"> Development </option>
+                                        <option value="Testing"> Testing </option>
+                                        <option value="Documentation"> Documentation </option>
+                                        <option value="System Setup"> System Setup </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="NumberContributers">Number of Contributors</label>
+                                    <input type="number" [(ngModel)]="NumberContributers" name="NumberContributers" class="form-control" id="NumberContributers" required placeholder="Number of Contributers">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Short_Description">Short Description:</label>
+                                    <input type="text" [(ngModel)]="Short_Description" name="Short_Description" class="form-control" id="Short_Description" placeholder="Short Description for Task">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Task_Description">Task Description:</label>
+                                    <textarea [(ngModel)]="Task_Description" name="Task_Description" class="form-control" id="Task_Description" placeholder="Complete Description for Task"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Estimated_Days">Estimated days:</label>
+                                    <input type="number" [(ngModel)]="Estimted_Days" name="Estimated_Days" class="form-control" id="Estimated_Days" placeholder="How many days will it take?">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" (click)="CreateTask(requestForm.value)" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

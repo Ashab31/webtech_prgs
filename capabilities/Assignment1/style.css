@@ -1,0 +1,24 @@
+#id1 {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    margin-left: 500px;
+    margin-top: 200px;
+    margin-bottom: 50px;
+    transition: transform 1s ease;
+}
+
+#id2 {
+    margin-left: 420px;
+    margin-top: 0;
+    transition: transform 5s ease;
+}
+
+#id2:hover {
+    transform: rotate(360deg);
+}
+
+#id1:hover {
+    background: plum;
+    /*transform: translateY(180px);*/
+}

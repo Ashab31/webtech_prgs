@@ -1,0 +1,40 @@
+.navbar {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.navbar-brand {
+    float: left !important;
+}
+
+.parallax1,
+.parallax2 {
+    opacity: 0.85;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax1 {
+    min-height: 750px;
+    background-image: url("Images-4.jpg");
+}
+
+.parallax2 {
+    min-height: 450px;
+    background-image: url("Images1.jpg");
+}
+
+p {
+    font-size: 20px;
+    color: lemonchiffon;
+    text-align: center;
+    margin: 40px;
+}
+
+.bg-1,
+.bg-2 {
+    background-color: #474e5d;
+    height: 250px;
+}

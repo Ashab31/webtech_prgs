@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="func.js">
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        <button type="button" id="id1" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mymodal"> open </button>
+
+        <img id="id2" src="images.png">
+        <div class="modal fade" id="mymodal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Welcome</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="jumbotron">
+
+                            <form>
+                                <div class="form-group">
+                                    <label for="usr">Name:</label>
+                                    <input type="text" class="form-control" id="usr">
+                                </div>
+                                <h4><strong>Date: </strong></h4>
+                                <div onload="startTime()" class="well" id="txt"> </div>
+                                <div class="form-group">
+                                    <label for="category">CATEGORIES:</label>
+                                    <select class="form-control" id="category" size="1">
+                                        <option value="" selected="selected"> categories...</option>
+                      
+                                     </select>
+                                    <br>
+                                    <label for="drinks">DRINKS:</label>
+                                    <select class="form-control" id="drinks" size="1">
+                                         <option value="" selected="selected">Select Drinks...</option>
+                                      </select>
+                                    <br>
+                                    <label for="order">ORDERS:</label>
+                                    <select class="form-control" id="order" size="1">
+                                         <option value="" selected="selected">Select Snacks...</option>  
+                                     </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="json.js">
+    </script>
+</body>
+
+</html>

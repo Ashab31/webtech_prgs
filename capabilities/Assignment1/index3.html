@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <p></p>
+                <form>
+                    <div class="form-group">
+
+                        <label for="sel1">CATEGORIES:</label>
+                        <select class="form-control" name="make" id="sel1" onchange="showform()">
+                      <option value="0">Select categories...</option>
+                      <option value="1">Beverages</option>
+                      <option value="2">condiments</option>
+                      <option value="3">Confections</option>
+                      <option value="4">Diary products</option>
+                    </select>
+
+                        <br>
+                        <div id="f1">
+                            <label for="sel1">PRODUCTS:</label>
+                            <select class="form-control" id="sel1" name="modal" onchange="showform()" disabled>
+                        <option value="0">Select product...</option>
+                        <option value="1">Chai</option>
+                        <option value="2">Coffee</option>
+                        <option value="3">Chang</option>
+                        <option value="4">Lemon Tea</option>                   
+                    </select>
+                        </div>
+                        <br>
+                        <div id="f2">
+                            <label for="sel1">ORDERS:</label>
+                            <select class="form-control" id="sel1" name="year" onchange="showform()" disabled>
+                        <option value="0">Select Order...</option>
+                        <option value="1">Cunewaide</option>
+                        <option value="2">Portland</option>
+                        <option value="3">Stuttgart</option>
+                        <option value="4">Mexico</option>
+                     </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $("select[name='make']").change(function() {
+                $("select[name='model']").removeAttr("disabled");
+                $("select[name='year']").removeAttr("disabled");
+                // $("select[name='price']").removeAttr("disabled");
+            });
+            // function showform() {
+            //     var selopt = document.getElementById("sel1").value;
+            //     if (selopt == 1) {
+            //         document.getElementById("f1").style.display = "block";
+            //         document.getElementById("f2").style.display = "none";
+            //     }
+            //     if (selopt == 2) {
+            //         document.getElementById("f2").style.display = "block";
+            //         document.getElementById("f1").style.display = "block";
+            //     }
+            /*   if (selopt == 0) {
+                   document.getElementById("f1").style.display = "none";
+                   document.getElementById("f2").style.display = "none";
+               } */
+            // }
+        </script>
+    </body>
+
+</html>

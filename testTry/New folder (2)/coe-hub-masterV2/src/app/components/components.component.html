@@ -1,0 +1,238 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+            <a href="#" class="navbar-brand"><span class="fa fa-american-sign-language-interpreting fa-2x"></span> COE HUB</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/app-solutions" RouterLinkActive="active"><span class="fa fa-superpowers fa-2x"></span> Solutions</a></li>
+                <li><a routerLink="/app-offerings" RouterLinkActive="active"><span class="fa fa-briefcase fa-2x"></span> Offerings</a></li>
+                <li class="active"><a routerLink="/app-components" RouterLinkActive="active"><span class="fa fa-thumb-tack fa-2x"></span> Components</a></li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle fa-2x"></span>{{name}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/app-profile" RouterLinkActive="active">Profile</a></li>
+                        <li><a routerLink="/app-notifications" RouterLinkActive="active">Notification</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a (click)="logOut()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="card-cut col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xs-offset-1">
+            <div class="caption">
+                <p style="margin-top: 10%;"> New Component </p>
+                <a role="button" data-toggle="modal" data-target="#choice"> <span class="fa fa-plus-circle fa-3x"></span> </a>
+
+            </div>
+        </div>
+    </div>
+    <div class="page-header">
+        <h1> Completed Components </h1>
+    </div>
+    <div class="row">
+        <div class="card-cut col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xs-offset-1" *ngFor="let sol of Components">
+            <div class="caption">
+                <h1><u>{{sol.Component_Name}}</u></h1>
+                <p>{{sol.Short_Description}}</p>
+                <p><a class="btn btn-primary" role="button" routerLink="/app-components-details" RouterLinkActive="active" (click)="getId(sol._id)">Details</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="page-header page-header1">
+        <h1> Ongoing Components </h1>
+    </div>
+    <div class="row">
+        <div class="card-cut col-xs-10 col-sm-6 col-md-4 col-lg-3 col-xs-offset-1" *ngFor="let sol of ComponentsR">
+            <div class="caption">
+                <h1><u>{{sol.Component_Name}}</u></h1>
+                <p>{{sol.Short_Description}}</p>
+                <p><a class="btn btn-primary" role="button" routerLink="/app-components-details" RouterLinkActive="active" (click)="getId(sol._id)">Details</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--CHOICE MODAL STARTS HERE-->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="ChoiceComponent" id="choice">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Make Choice</h4>
+            </div>
+            <div class="modal-body">
+                <p><a role="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#ComponentRequestForm">Request Component </a></p>
+                <p><a role="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#ComponentAddForm">Add Component </a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--CHOICE MODAL ENDS HERE-->
+
+<!--COMPONENET REQUEST FORM STARTS HERE-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="ComponentRequestForm">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create an Component</h4>
+            </div>
+            <div class="modal-body">
+
+                <!--solutions form-->
+                <div class="container">
+                    <form #requestForm="ngForm" autocomplete="on">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Component_Name">Component Name</label>
+                                    <input type="text" [(ngModel)]="Component_Name" name="Component_Name" class="form-control" id="Component_Name" required placeholder="Name for Component">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Component_Type">Component Type</label>
+                                    <select [(ngModel)]="Component_Type" name="Component_Type" class="form-control" id="Component_Type" required>
+                                        <option value="Development"> Development </option>
+                                        <option value="Testing"> Testing </option>
+                                        <option value="Documentation"> Documentation </option>
+                                        <option value="System Setup"> System Setup </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Short_Description">Short Description:</label>
+                                    <input type="text" [(ngModel)]="Short_Description" name="Short_Description" class="form-control" id="Short_Description" placeholder="Short Description for Component">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Component_Description">Component Description:</label>
+                                    <textarea [(ngModel)]="Component_Description" name="Component_Description" class="form-control" id="Component_Description" placeholder="Complete Description for Component"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Estimated_Days">Estimated days:</label>
+                                    <input type="number" [(ngModel)]="Estimted_Days" name="Estimated_Days" class="form-control" id="Estimated_Days" placeholder="How many days will it take?">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" (click)="AddComponent(requestForm.value)" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--COMPONENT REQUEST FORM ENDS HERE-->
+
+<!--COMPONENT ADD FORM STATS HERE-->
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="ComponentAddForm">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create an Component</h4>
+            </div>
+            <div class="modal-body">
+
+                <!--solutions form-->
+                <div class="container">
+                    <form #requestForm1="ngForm" autocomplete="on">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Component_Name">Component Name</label>
+                                    <input type="text" [(ngModel)]="Component_Name" name="Component_Name" class="form-control" id="Component_Name" required placeholder="Name for Component">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Component_Type">Component Type</label>
+                                    <select [(ngModel)]="Component_Type" name="Component_Type" class="form-control" id="Component_Type" required>
+                                        <option value="Development"> Development </option>
+                                        <option value="Testing"> Testing </option>
+                                        <option value="Documentation"> Documentation </option>
+                                        <option value="System Setup"> System Setup </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Short_Description">Short Description:</label>
+                                    <input type="text" [(ngModel)]="Short_Description" name="Short_Description" class="form-control" id="Short_Description" placeholder="Short Description for Component">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <label for="Component_Description">Component Description:</label>
+                                    <textarea [(ngModel)]="Component_Description" name="Component_Description" class="form-control" id="Component_Description" placeholder="Complete Description for Component"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" (click)="AddComponent(requestForm1.value)" data-dismiss="modal" data-target="#urlModal" data-toggle="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--COMPONENT ADD FORM ENDS HERE-->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="urlModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Push Your Component Code Here</h4>
+            </div>
+            <div class="modal-body">
+                <p>{{url}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

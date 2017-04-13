@@ -1,0 +1,23 @@
+.parent {
+    border: 3px solid dodgerblue;
+    background: lightgreen;
+    margin: 10px;
+}
+
+@mixin border-radius($rad) {
+    border-radius: $rad;
+}
+
+.small-panel {
+    @extend .parent;
+    @include border-radius(10px);
+    font-size: 12px;
+    padding: 5px;
+}
+
+.big-panel {
+    @extend .parent;
+    @include border-radius(20px);
+    font-size: 38px;
+    padding: 30px;
+}

@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row first">
+        <ng-container *ngFor='let cards of card ; let i = index'>
+            <div *ngIf="i<6">
+                <div class="col-sm-4 col-md-4" *ngIf='cards.Task_Request_Status != 0'>
+                    <div class="thumbnail card">
+                        <img src="./assets/angular_pic.jpeg" alt="...">
+                        <hr>
+                        <div class="caption">
+                            <h3>{{cards.Task_Name}}</h3>
+                            <p>{{cards.Short_Description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<!--<div *ngFor=" let tweet of singleCategory;  let i=index">
+    <div *ngIf="i<2">
+        {{tweet}}
+    </div>
+</div>-->
+<!--<div class="col-sm-4 col-md-4" *ngIf='cards.Task_Request_Status != 0'>
+            <div class="thumbnail card">
+                <img src="./assets/angular_pic.jpeg" alt="...">
+                <hr>
+                <div class="caption">
+                    <h3>{{cards.Task_Name}}</h3>
+                    <p>{{cards.Description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4" *ngIf='cards.Task_Request_Status != 0'>
+            <div class="thumbnail card">
+                <img src="./assets/angular_pic.jpeg" alt="...">
+                <hr>
+                <div class="caption">
+                    <h3>{{cards.Task_Name}}</h3>
+                    <p>{{cards.Description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4" *ngIf='cards.Task_Request_Status != 0'>
+            <div class="thumbnail card">
+                <img src="./assets/angular_pic.jpeg" alt="...">
+                <hr>
+                <div class="caption">
+                    <h3>{{cards.Task_Name}}</h3>
+                    <p>{{cards.Description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4" *ngIf='cards.Task_Request_Status != 0'>
+            <div class="thumbnail card">
+                <img src="./assets/angular_pic.jpeg" alt="...">
+                <hr>
+                <div class="caption">
+                    <h3>{{cards.Task_Name}}</h3>
+                    <p>{{cards.Description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

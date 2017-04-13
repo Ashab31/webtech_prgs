@@ -1,0 +1,13 @@
+.wrapper {
+    background: url('wall.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+img {
+    opacity: 0.7;
+    /*filter: alpha(opacity=50);*/
+    /* For IE8 and earlier */
+}

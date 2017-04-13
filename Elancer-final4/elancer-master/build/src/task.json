@@ -1,0 +1,50 @@
+[
+
+    {
+        "taskname": "Button Component",
+        "description": "Details of Project1",
+        "domain": "Web Tech",
+        "vacancy": "2",
+        "phase": "Initial"
+    },
+
+    {
+        "taskname": "Cloud Services",
+        "description": "Details of project2",
+        "domain": "Cloud",
+        "vacancy": "7",
+        "phase": "Development"
+    },
+
+    {
+        "taskname": "Testing module",
+        "description": "Details of project3",
+        "domain": "Testing Phases",
+        "vacancy": "5",
+        "phase": "SDAT"
+    },
+
+    {
+        "taskname": "Cloud Services",
+        "description": "Details of project2",
+        "domain": "Cloud",
+        "vacancy": "7",
+        "phase": "Development"
+    },
+
+    {
+        "taskname": "Angular Component",
+        "description": "Details of project2",
+        "domain": "Cloud",
+        "vacancy": "7",
+        "phase": "Development"
+    },
+
+    {
+        "taskname": "Button Component",
+        "description": "Details of Project1",
+        "domain": "Web Tech",
+        "vacancy": "2",
+        "phase": "Initial"
+    }
+]

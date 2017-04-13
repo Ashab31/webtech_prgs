@@ -1,0 +1,27 @@
+.c>div {
+    padding: 1em;
+}
+
+.c1 {
+    background-color: #8e352e;
+}
+
+.c2 {
+    background-color: #c84c44;
+}
+
+.c3 {
+    background-color: #a53d36;
+}
+
+@media screen and (min-width: 56em) {
+    .c1 {
+        float: left;
+        width: 30%;
+    }
+    .c2,
+    .c3 {
+        float: left;
+        width: 70%;
+    }
+}

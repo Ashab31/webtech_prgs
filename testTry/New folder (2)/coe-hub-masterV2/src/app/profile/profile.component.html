@@ -1,0 +1,171 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+            <a class="navbar-brand"><span class="fa fa-american-sign-language-interpreting fa-2x"></span> COE HUB</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/app-solutions" RouterLinkActive="active"><span class="fa fa-superpowers fa-2x"></span> Solutions</a></li>
+                <li><a routerLink="/app-offerings" RouterLinkActive="active"><span class="fa fa-briefcase fa-2x"></span> Offerings</a></li>
+                <li><a routerLink="/app-components" RouterLinkActive="active"><span class="fa fa-thumb-tack fa-2x"></span> Components</a></li>
+                <li><a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user-circle fa-2x"></span>{{name}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="active"><a routerLink="/app-profile" RouterLinkActive="active">Profile</a></li>
+                        <li><a routerLink="/app-notifications" RouterLinkActive="active">Notification</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a (click)="logOut()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2" id="icon">
+            <span class="fa fa-user fa-5x"></span>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+            <p class="name ">{{name}}<br>
+
+            </p>
+        </div>
+    </div>
+</div><br><br>
+
+
+<!--toggle bar-->
+
+<div class="container">
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Organisational</a></li>
+        <li><a data-toggle="tab" href="#menu1">Projects</a></li>
+
+    </ul>
+
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+
+            <div class="container orgdata">
+                <div class="row odd">
+                    <div class="col-lg-6 content">
+                        Mindtree ID
+
+                        <BR> {{mid}}
+
+
+                        <hr>
+                    </div>
+
+                    <div class="col-lg-6 content">
+                        Designation<br> Engineer
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 content">
+                        Competency
+                        <BR> C1
+                        <hr>
+                    </div>
+
+                    <div class="col-lg-6 content">
+
+                        Email<br> {{email}}
+
+                        <br>
+
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row odd">
+                    <div class="col-lg-6 content">
+                        Work Phone
+                        <BR> -
+                        <hr>
+                    </div>
+
+                    <div class="col-lg-6 content">
+                        Mobile Number<br> 8197883449
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 content">
+                        Office
+                        <BR> Mindtree Bhubneshwar
+                        <hr>
+                    </div>
+
+                    <div class="col-lg-6 content">
+                        Location<br> Bhubneshwar
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row odd">
+                    <div class="col-lg-6 content">
+                        Department
+                        <BR> BIZC_DELIVERY
+                        <hr>
+                    </div>
+
+                    <div class="col-lg-6 content">
+                        Industry Group<br> Business-Common
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 content">
+                        Manager
+                        <BR> Amarendra Gopalakrishna
+                    </div>
+
+                    <div class="col-lg-6 content">
+                        Date of Joining<br> 08 Jan 2017
+                    </div>
+                </div>
+            </div><br>
+        </div>
+
+
+        <!--project details-->
+
+        <div id="menu1" class="tab-pane fade">
+            <div class="container projdata">
+                <br><br><br>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>Task_ID</th>
+                            <th>Task Name</th>
+                            <th>Description</th>
+                            <th>Domain</th>
+                        </tr>
+                        <ng-container *ngFor='let task of tasks'>
+                            <tr *ngIf='task.Task_Status != "Open"'>
+                                <td>{{task._id}}</td>
+                                <td> {{task.Task_Name}}</td>
+                                <td> {{task.Short_Description}} </td>
+                                <td> {{task.Indus_focus}} </td>
+
+                            </tr>
+                        </ng-container>
+                    </table>
+                </div>
+            </div>
+        </div>

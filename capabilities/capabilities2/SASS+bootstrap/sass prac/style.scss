@@ -1,0 +1,48 @@
+@import "profile";
+@import "extendtry";
+$color: grey;
+body {
+    background-color: $color;
+}
+
+$x: none;
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: $x;
+    }
+    li {
+        display: inline-block;
+    }
+    a {
+        color: black;
+        font-size: 20px;
+        display: block;
+        padding: 6px 12px;
+        text-decoration: $x;
+    }
+}
+
+.navbar {
+    background-color: peachpuff;
+    width: auto;
+    height: 40px;
+}
+
+@mixin styl($y) {
+    width: 1000px;
+    height: 150px;
+    float: right;
+    margin-#{$y}: 15px;
+}
+
+.text {
+    @include styl(right);
+    @include styl(top);
+    border: indigo 2px solid;
+    //display: inline;
+    font-size: 25px;
+    padding: 5px;
+    float: right;
+}

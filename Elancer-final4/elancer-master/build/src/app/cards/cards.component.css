@@ -1,0 +1,14 @@
+.first {
+    margin-top: 2em;
+}
+
+.second {
+    margin-top:2em;
+}
+
+.card{
+ box-shadow: 0 1em 2em 0 rgba(0, 0, 0, 0.2), 0 1em 2em 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
